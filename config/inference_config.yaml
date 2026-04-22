@@ -1,0 +1,19 @@
+# ====================== 推理模块配置 ======================
+inference:
+  # 推理配置
+  model:
+    model_dir: "data/models/nnUNet/3d_fullres/"  # 训练好的模型目录
+    dataset_id: 101  # 对应的数据集ID
+    fold: 0  # 对应的交叉验证折数
+
+  # 滑动窗口推理配置（解决大CT内存溢出的问题）
+  sliding_window:
+    window_size: [128, 128, 128]  # 滑动窗口大小
+    overlap: 0.5  # 窗口重叠比例
+
+  # 后处理配置
+  postprocess:
+    enable: true  # 是否开启后处理
+    remove_small_objects: true  # 是否去除小的噪声区域
+    min_object_size: 100  # 最小的区域大小，小于这个的会被当成噪声删掉
+    smooth_boundary: true  # 是否平滑分割边界，让结果更自然

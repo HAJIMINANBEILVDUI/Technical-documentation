@@ -1,0 +1,23 @@
+# ====================== 预处理模块配置 ======================
+preprocessing:
+  # 重采样配置：将不同CT的体素间距统一为标准值
+  resample:
+    target_spacing: [1.0, 1.0, 1.0]  # 目标体素间距，单位mm，顺序(z,y,x)
+    interpolate: "bspline"  # 重采样插值方式：nearest/linear/bspline
+
+  # CT值归一化配置
+  normalize:
+    hu_clip_range: [-1000, 400]  # CT HU值裁剪范围，超出的部分截断（肺部CT标准范围）
+    normalize_range: [0, 1]  # 归一化后的值范围，将HU值缩放到这个区间
+
+  # 裁剪配置
+  crop:
+    auto_crop_background: true  # 是否自动裁剪背景，只保留有效肺部区域，减少计算量
+    margin: 10  # 裁剪时的边缘余量，单位mm
+
+  # 数据增强配置（仅训练时生效）
+  augmentation:
+    enable: true  # 是否开启数据增强
+    rotation_range: [-15, 15]  # 随机旋转角度范围，单位度
+    flip_prob: 0.5  # 随机翻转的概率
+    noise_std: 0.01  # 随机高斯噪声的标准差

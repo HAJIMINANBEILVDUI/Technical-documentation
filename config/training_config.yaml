@@ -1,0 +1,25 @@
+# ====================== 训练模块配置 ======================
+training:
+  # 数据集配置
+  dataset:
+    dataset_id: 101  # nnU-Net的数据集ID，自定义即可
+    dataset_name: "ChestCT_Lobe"  # 数据集名称
+    train_ratio: 0.8  # 训练集占总数据的比例，剩下的为测试集
+
+  # 训练超参数
+  hyperparameter:
+    epochs: 1000  # 最大训练轮数
+    batch_size: 2  # 批次大小
+    learning_rate: 1e-4  # 初始学习率
+    weight_decay: 1e-5  # 权重衰减，防止过拟合
+
+  # 训练策略
+  strategy:
+    early_stopping_patience: 50  # 早停：50轮没提升就停止训练，防止过拟合
+    mixed_precision: true  # 是否开启混合精度训练，加快训练速度、省显存
+    multi_gpu: false  # 是否开启多GPU训练
+
+  # 模型配置
+  model:
+    nnunet_config: "3d_fullres"  # nnU-Net的模型配置：2d/3d_lowres/3d_fullres/3d_cascade
+    fold: 0  # 交叉验证的折数

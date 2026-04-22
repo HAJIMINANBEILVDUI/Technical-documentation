@@ -1,0 +1,21 @@
+
+system:
+  # 全局日志配置
+  log:
+    level: "INFO"  # 日志级别：DEBUG/INFO/WARNING/ERROR
+    log_dir: "logs/"  # 日志文件存放目录
+    rotation: "1 day"  # 日志自动轮转：每天一个新日志
+    retention: "7 days"  # 日志保留7天
+
+  # 全局路径配置
+  path:
+    raw_data_dir: "data/raw/"  # 原始CT数据目录
+    processed_data_dir: "data/processed/"  # 预处理后数据目录
+    model_dir: "data/models/"  # 训练好的模型存放目录
+    result_dir: "data/results/"  # 分割结果存放目录
+    config_dir: "configs/"  # 配置文件目录
+
+  # 全局设备配置
+  device:
+    use_gpu: true  # 是否使用GPU加速
+    gpu_id: 0  # 使用的GPU卡号，多GPU可以填[0,1]
