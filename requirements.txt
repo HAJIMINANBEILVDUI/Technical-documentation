@@ -2,13 +2,12 @@
 python>=3.8,<3.11
 
 # 核心深度学习框架
-torch>=1.12.0,<2.0.0
-torchaudio>=0.12.0
+torch>=1.12.0
 torchvision>=0.13.0
 
 # nnU-Net v2 核心依赖
-nnunetv2==2.2.1
-batchgenerators==0.25
+nnunetv2>=2.2.1
+batchgenerators>=0.25
 scikit-image>=0.19.0
 scipy>=1.9.0
 
@@ -16,7 +15,7 @@ scipy>=1.9.0
 SimpleITK>=2.2.0
 monai>=1.1.0
 nibabel>=4.0.0
-pydicom>=2.3.0  # DICOM格式支持
+pydicom>=2.3.0
 
 # 数据处理
 numpy>=1.23.0
@@ -26,8 +25,7 @@ h5py>=3.7.0
 # 可视化
 matplotlib>=3.6.0
 plotly>=5.10.0
-itkwidgets>=0.32.0  # 3D医学影像可视化
-ipywidgets>=8.0.0
+itkwidgets>=0.32.0
 napari>=0.4.18
 
 # GUI界面
@@ -39,3 +37,4 @@ tqdm>=4.64.0
 loguru>=0.6.0
 pyyaml>=6.0
 pytest>=7.2.0
+gdown>=4.5.0

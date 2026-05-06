@@ -1,1 +1,5 @@
-"""图形用户界面模块：实现用户交互与流程控制。"""
+"""GUI妯″潡锛歅yQt5鍥惧舰鐢ㄦ埛鐣岄潰"""
+
+from .main_window import MainWindow
+
+__all__ = ['MainWindow']
