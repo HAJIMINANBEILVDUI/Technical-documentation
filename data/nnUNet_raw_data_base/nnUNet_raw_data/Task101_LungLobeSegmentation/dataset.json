@@ -1,0 +1,21 @@
+{
+    "name": "LungLobeSegmentation",
+    "description": "Chest CT Lung Lobe Segmentation Dataset",
+    "reference": "Public Dataset",
+    "licence": "CC BY-NC-SA",
+    "release": "1.0",
+    "tensorImageSize": "3D",
+    "modality": {
+        "0": "CT"
+    },
+    "labels": {
+        "0": "background",
+        "1": "left_upper_lobe",
+        "2": "left_lower_lobe",
+        "3": "right_upper_lobe",
+        "4": "right_middle_lobe",
+        "5": "right_lower_lobe"
+    },
+    "numTraining": 0,
+    "training": []
+}
